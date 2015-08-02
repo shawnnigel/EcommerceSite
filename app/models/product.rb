@@ -7,4 +7,10 @@ with:
 message: 'must be a URL for GIF, JPG or PNG image.'
 }
 validates :title, uniqueness: true
+
+def self.latest
+	Product.order(:updated_at).last
+	
+end
+
 end
